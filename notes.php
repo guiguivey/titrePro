@@ -2,7 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Mini-chat</title>
+        <title>Mon app</title>
+           <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     </head>
     <style>
     form
@@ -14,9 +16,9 @@
 
     <form action="notes_post.php" method="post">
         <p>
-        <label for="note">Note</label> :  <input type="text" name="note" id="note" /><br />
+        <label for="note">Note</label> :  <input type="text" name="note" id="note" class="form-control"/>
 
-        <input type="submit" value="Envoyer" />
+        <input type="submit" value="Envoyer" class="btn btn-default" />
 	</p>
     </form>
 

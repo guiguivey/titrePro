@@ -14,6 +14,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
    <head>
       <title>Mon app</title>
       <meta charset="utf-8">
+         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    </head>
    <body>
       <div align="center">

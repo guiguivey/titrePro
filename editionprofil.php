@@ -30,33 +30,52 @@ if(isset($_SESSION['id'])) {
          $msg = "Vos deux mdp ne correspondent pas !";
       }
    }
-?>
-<html>
+   ?>
+   <html>
    <head>
       <title>Mon app</title>
       <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    </head>
    <body>
       <div align="center">
          <h2>Edition de mon profil</h2>
-         <div align="left">
-            <form method="POST" action="" enctype="multipart/form-data">
-               <label>Pseudo :</label>
-               <input type="text" name="newpseudo" placeholder="Pseudo" value="<?php echo $user['pseudo']; ?>" /><br /><br />
-               <label>Mail :</label>
-               <input type="text" name="newmail" placeholder="Mail" value="<?php echo $user['mail']; ?>" /><br /><br />
-               <label>Mot de passe :</label>
-               <input type="password" name="newmdp1" placeholder="Mot de passe"/><br /><br />
-               <label>Confirmation - mot de passe :</label>
-               <input type="password" name="newmdp2" placeholder="Confirmation du mot de passe" /><br /><br />
-               <input type="submit" value="Mettre à jour mon profil !" />
+         
+            <form method="POST" action="" enctype="multipart/form-data" class="form-horizontal">
+            <div class="form-group">
+               <label class="col-sm-2 control-label">Pseudo :</label>
+               <div class="col-sm-10">
+               <input type="text" name="newpseudo" class="form-control" placeholder="Pseudo" value="<?php echo $user['pseudo']; ?>" />
+               </div>
+               </div>
+               <div class="form-group">
+               <label class="col-sm-2 control-label">Mail :</label>
+               <div class="col-sm-10">
+               <input type="text" name="newmail" class="form-control" placeholder="Mail" value="<?php echo $user['mail']; ?>" />
+               </div>
+               </div>
+               <div class="form-group">
+               <label class="col-sm-2 control-label">Mot de passe :</label>
+               <div class="col-sm-10">
+               <input type="password" name="newmdp1" class="form-control" placeholder="Mot de passe"/>
+               </div>
+               </div>
+               <div class="form-group">
+               <label class="col-sm-2 control-label">Confirmation - mot de passe :</label>
+               <div class="col-sm-10">
+               <input type="password" name="newmdp2" class="form-control" placeholder="Confirmation du mot de passe" />
+               </div>
+               </div>
+               <input type="submit" class="btn btn-default" value="Mettre à jour mon profil !" />
             </form>
-            <?php if(isset($msg)) { echo $msg; } ?>
-         </div>
+            <?php if(isset($msg)) { echo '
+<div class="alert alert-danger">' .$msg. "</div>"; } ?>
+         
       </div>
    </body>
-</html>
-<?php   
+   </html>
+   <?php   
 }
 else {
    header("Location: connexion.php");

@@ -25,25 +25,40 @@ if(isset($_POST['formconnexion'])) {
 }
 ?>
 <html>
-   <head>
-      <title>Mon app</title>
-      <meta charset="utf-8">
-   </head>
-   <body>
-      <div align="center">
-         <h2>Connexion</h2>
-         <br /><br />
-         <form method="POST" action="">
-            <input type="email" name="mailconnect" placeholder="Mail" />
-            <input type="password" name="mdpconnect" placeholder="Mot de passe" />
-            <br /><br />
-            <input type="submit" name="formconnexion" value="Se connecter !" />
-         </form>
-         <?php
-         if(isset($erreur)) {
-            echo '<font color="red">'.$erreur."</font>";
-         }
-         ?>
+<head>
+   <title>Mon app</title>
+   <meta charset="utf-8">
+   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+</head>
+<body>
+
+   <h2>Connexion</h2>
+
+   <form method="POST" action="" class="form-horizontal">
+      <div class="form-group">
+         <label for="mail" class="col-sm-2 control-label">Mail :</label>
+         <div class="col-sm-10">
+            <input type="email" name="mailconnect" placeholder="Mail" class="form-control" />
+         </div>
       </div>
-   </body>
+      <div class="form-group">
+         <label for="mail" class="col-sm-2 control-label">Mot de passe :</label>
+         <div class="col-sm-10">
+            <input type="password" name="mdpconnect" placeholder="Mot de passe" class="form-control" />
+         </div>
+      </div>
+        <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" name="formconnexion" value="Se connecter !" class="btn btn-default"/>
+      </div>
+      </div>
+   </form>
+   <?php
+   if(isset($erreur)) {
+      echo '<font color="red">'.$erreur."</font>";
+   }
+   ?>
+</div>
+</body>
 </html>
